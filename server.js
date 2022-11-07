@@ -7,7 +7,12 @@ const app = express();
 //require that package
 const expressLayouts =require('express-ejs-layouts')
 
+//Require the index routes
 const indexRouter = require('./routes/index')
+
+//Require the authors routes
+const authorRouter = require('./routes/authors')
+
 
 //setup view engine and views folder
 app.set('view engine', 'ejs')
@@ -20,9 +25,11 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true})
 const db = mongoose.connection;
 db.on('error', error => console.log(error));
-db.on('open', error => console.log('Connected to Mongoose'))
+db.once('open', error => console.log('Connected to Mongoose'))
 
 app.use('/', indexRouter)
+app.use('/authors', authorRouter)
+
 
 app.listen(process.env.PORT || 3000, () =>{
     console.log('listen on port ')
