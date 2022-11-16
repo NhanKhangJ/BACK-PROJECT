@@ -7,6 +7,9 @@ const app = express();
 //require that package
 const expressLayouts =require('express-ejs-layouts')
 
+//bodyparser
+const bodyPaser= require('body-parser')
+
 //Require or index Routes the index routes
 const indexRouter = require('./routes/index')
 
@@ -23,7 +26,7 @@ app.set('layout', 'layouts/layout')
 app.use(expressLayouts);
 //tell our public file where your file going to be
 app.use(express.static('public'))
-
+app.use(bodyPaser.urlencoded({limit: '10mb', extended: false}))
 
 //require mongoose
 const mongoose = require('mongoose');

@@ -83,29 +83,30 @@ npm i express ejs express-ejs-layouts
 npm i --save-dev nodemon 
 npm i mongoose
 
-if you want use env you have install env with npm
+* Dot env if you want use env you have install env with npm
 npm i --save-dev dotenv
 
-set up env file with enviroment variable
-and gitignore file to ignore thing to push on repository
+* set up env file with enviroment variable and gitignore file to ignore thing to push on repository
 
 initilize this repository 
 push to github 
 
 
+* heroku install
+- sudo npm install heroku --global at the terminal
+- follow the heroku loging process 
+- remember you on the main branch
 
-sudo npm install heroku --global at the terminal
-follow the heroku loging process 
-remember you on the main branch
-
-after you login with heroku and push to heroku, you must set up your mongodb atlast to and add any information needed in the setting with heroku config variable 
-
-
+* after you login with heroku and push to heroku, you must set up your mongodb atlast to and add any information needed in the setting with heroku config variable 
 
 
-use it when in side the zsh:
-export PATH=/opt/homebrew/bin:PATH 
 
-use it to avoid mongoose cannot connect
-brew services start mongodb/brew/mongodb-community@5.0
-brew services stop mongodb/brew/mongodb-community@5.0
+* start using mongooose and mongodb
+- use it when in side the zsh:
+- export PATH=/opt/homebrew/bin:PATH 
+
+- use it to avoid mongoose cannot connect
+- brew services start mongodb/brew/mongodb-community@5.0
+- brew services stop mongodb/brew/mongodb-community@5.0
+
+* partial is where we put our template file that are actually related to routes
