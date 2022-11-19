@@ -16,6 +16,9 @@ const indexRouter = require('./routes/index')
 //Require the authors routes
 const authorRouter = require('./routes/authors')
 
+//Require the book routes
+const bookRouter = require('./routes/book')
+
 
 //setup view engine and views folder
 app.set('view engine', 'ejs')
@@ -40,7 +43,9 @@ app.use('/', indexRouter)
 //tell athors path where is it comming from and the which router we going to handle it
 app.use('/authors', authorRouter)
 
+app.use('/books', bookRouter)
+
 
 app.listen(process.env.PORT || 3000, () =>{
-    console.log('listen on port ')
+    console.log('listen on port 3000')
 })

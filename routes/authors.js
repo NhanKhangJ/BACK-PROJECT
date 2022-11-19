@@ -1,10 +1,8 @@
 const express = require('express');
-const author = require('../models/author');
 const Author = require('../models/author'); // mongoose author schema 
 const router = express.Router();
 //All authors Route
 router.get('/', async (req, res) => {
-    console.log(req.query.name)
     let searchOptions = {}
     if(req.query.name != null && req.query.name !== ''){
         searchOptions.name = new RegExp(req.query.name, 'i')
