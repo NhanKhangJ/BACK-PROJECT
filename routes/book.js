@@ -100,7 +100,7 @@ router.get('/:id/edit', async (req, res) => {
 })
 
 //Update Book route
-router.put('/', async (req, res) => {
+router.put('/:id', async (req, res) => {
   let book
 
   try {
@@ -110,20 +110,20 @@ router.put('/', async (req, res) => {
     book.publishDate = new Date(req.body.publishDate)
     book.pageCount = req.body.pageCount
     book.description = req.body.description
-    if(req.body.cover != null && req.body.cover !== ''){
+    if (req.body.cover != null && req.body.cover !== '') {
       saveCover(book, req.body.cover)
     }
+    await book.save()
     res.redirect(`/books/${book.id}`)
   } catch {
-    if(book != null){
-      renderNewPage(res, book, true)
-    }else {
-      res.redirect('/')
+    if (book != null) {
+      renderEditPage(res, book, true)
+    } else {
+      redirect('/')
     }
-    
   }
 })
-
+//delete Book Page
 router.delete('/:id', async (req, res) =>{
   let book 
   try{
