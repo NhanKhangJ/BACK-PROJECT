@@ -1,9 +1,10 @@
 <h2 class="page-header">Edit Author</h2>
 <!--Receive information the edit route /:id/edit to edit/update -->
 <form action="/authors/<%= author.id %>?_method=PUT" method="POST">
-    <!-- <label>Name</label>
-<input type="text" name="name" value="<%= author.name %>"> this is form fields -->
+
     <%- include('_form_fields') %>
-    <a href="/authors/<%= author.id %>">Cancel</a>
-    <button type="submit">Update</button>
+    <div class="form-row form-row-end btn-row">
+            <a class="btn btn-danger" href="/authors/<%= author.id %>">Cancel</a>
+            <button class="btn btn-primary" type="submit">Update</button>
+    </div>
 </form>
