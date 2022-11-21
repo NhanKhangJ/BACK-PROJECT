@@ -1,0 +1,34 @@
+@import 'shared/variables.css';
+@import 'shared/fonts.css';
+@import 'shared/header.css';
+@import 'shared/buttons.css';
+
+:root {
+    font-family: 'Gotham Rounded';
+    font-size: 20px;
+    color: var(--color-text-light);
+}
+/* select all before element and after elemnt */
+*, *::before, *::after{
+    box-sizing: border-box;
+    /* sizing our box much esier if they have padding or margin */
+}
+
+body{
+    background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light));
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.inner-container{
+    /* zero on top and bottom, 2 rem on left and right */
+    margin: 0 2rem; 
+}
+
+.page-header {
+    font-size:  2rem;
+    font-weight: 500;
+}

@@ -1,5 +1,10 @@
-<h2><%= author.name %></h2>
+<h2 class="page-header"><%= author.name %></h2>
 <a href="/authors/<%= author.id %>/edit">Edit</a>
+<!-- 
+<form method="POST" action="<%= url %>?_method=DELETE">
+    <button type="submit">Delete</button>
+  </form> -->
+
 <%- include('../partials/deleteForm',
  { url: `/authors/${author.id}`}) %>
 <% if(booksByAuthor.length > 0) { %>
