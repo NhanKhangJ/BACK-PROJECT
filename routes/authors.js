@@ -39,7 +39,7 @@ try {
      const newAuthor = await author.save()
      res.redirect(`authors/${newAuthor.id}`)
 } catch {
-    res.render('author/new', {
+    res.render('authors/new', {
         author: author,
         errorMessage: 'Error creating Author'
     })
